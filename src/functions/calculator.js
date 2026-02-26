@@ -90,22 +90,16 @@ export const calculator = () => {
       return;
     }
 
+    let currentCalcBase = displayNumber;
     const operatorIndex = displayNumber.indexOf(operator, 1);
+    
     if (operatorIndex !== -1 && displayNumber.slice(operatorIndex + 1) !== "") {
-      submitResult();
+      currentCalcBase = submitResult();
     }
 
-    setTempNumber(displayNumber);
+    setTempNumber(currentCalcBase);
     setOperator(item);
-
-    setdisplayNumber((prev) => {
-      const lastChar = prev.slice(-1);
-      if (operators.includes(lastChar)) {
-        return prev.slice(0, -1) + item;
-      }
-      return prev + item;
-    });
-
+    setdisplayNumber(currentCalcBase + item);
     setClearState(false);
   };
 
@@ -177,7 +171,6 @@ export const calculator = () => {
 
   const submitResult = () => {
     const operatorIndex = displayNumber.indexOf(operator, 1);
-
     if (operatorIndex === -1) return;
 
     const first = Number(tempNum);
@@ -217,6 +210,8 @@ export const calculator = () => {
     setTempNumber("");
     setOperator("");
     setClearState(true);
+
+    return finalResult;
   };
 
   return {
