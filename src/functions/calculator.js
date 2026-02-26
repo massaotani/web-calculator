@@ -92,7 +92,7 @@ export const calculator = () => {
 
     let currentCalcBase = displayNumber;
     const operatorIndex = displayNumber.indexOf(operator, 1);
-    
+
     if (operatorIndex !== -1 && displayNumber.slice(operatorIndex + 1) !== "") {
       currentCalcBase = submitResult();
     }
@@ -177,11 +177,13 @@ export const calculator = () => {
     const secondNumString = displayNumber.slice(operatorIndex + 1);
 
     if (secondNumString === "") {
-      setdisplayNumber(String(first));
+      const resetVal = String(first);
+      setdisplayNumber(resetVal);
       setTempNumber("");
       setOperator("");
       setClearState(true);
-      return;
+      
+      return resetVal;
     }
 
     const second = Number(secondNumString);
