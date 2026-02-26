@@ -2,4 +2,4 @@
 
 A simple and responsive calculator.
 
-Check the website by <a href="https://web-calculator-three.vercel.app">clicking here</a>.
+Check the application by <a href="https://web-calculator-three.vercel.app">clicking here</a>.
