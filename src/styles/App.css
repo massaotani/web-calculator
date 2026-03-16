@@ -64,31 +64,23 @@
   border: 1px solid #ff9500;
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .calculator-container {
-    width: 90vw !important; 
-    height: 80vh !important; 
+    width: 92vw !important;
+    height: 80vh !important;
+    max-height: 700px;
     padding: 20px !important;
-    border-radius: 20px !important;
+    border-radius: 25px !important;
   }
 
   .panel-container {
-    margin: 2vh auto !important;
-    width: 95% !important;
-    height: 20% !important;
-  }
-
-  .display-container {
-    font-size: 2.5rem !important;
-  }
-
-  .row-container {
-    gap: 8px !important;
+    width: 100% !important;
+    margin: 20px 0 !important;
+    padding: 0 15px !important;
   }
 
   button {
-    padding: 15px 0 !important; 
-    font-size: 1.4rem !important;
-    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 }
